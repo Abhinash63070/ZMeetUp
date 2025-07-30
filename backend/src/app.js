@@ -16,13 +16,8 @@ const io = connectToSocket(server);
 
 app.set("port", (process.env.PORT || 8000))
 app.use(cors({
-
-   origin: [
-    'http://localhost:8000',
-    'https://zmeetup-frontend-clwm.onrender.com'
-   ],
-   credentials:true
-
+   origin: true, // ya origin: "*"
+   credentials: true
 }));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
