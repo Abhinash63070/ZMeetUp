@@ -34,11 +34,16 @@
 }
 
 .conferenceView  video {
-    width: 40vw;
-    height: 20vh;
-    min-width: 30vw;
+    width: 30vw;
+    height: 30vh;
+    min-width: 200px;
+    min-height: 180px;
     border-radius: 10px;
-     transform: scaleX(-1);
+    object-fit: cover;
+    background: #222;
+    box-shadow: 0 4px 16px #0003;
+    margin: 1vw;
+    transform: scaleX(-1);
 }
 
 .chatRoom {
@@ -104,5 +109,22 @@
     left: 0 !important;
     bottom: 0 !important;
     border-radius: 0 !important;
+  }
+  .conferenceView {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .conferenceView video {
+    width: 90vw !important;
+    height: 28vh !important;
+    min-width: 160px;
+    min-height: 120px;
+    margin: 0 auto 10px auto;
+    border-radius: 8px !important;
+    object-fit: cover;
+    box-shadow: 0 2px 8px #0002;
+    background: #222;
   }
 }
