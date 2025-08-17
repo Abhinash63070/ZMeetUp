@@ -33,12 +33,21 @@
     gap: 10px;
 }
 
-.conferenceView  video {
-    width: 40vw;
-    height: 20vh;
-    min-width: 30vw;
+.conferenceView video {
+    width: 26vw;
+    height: 42vh;
+    min-width: 320px;
+    min-height: 220px;
+    max-width: 700px;
+    max-height: 500px;
     border-radius: 10px;
-     transform: scaleX(-1);
+    object-fit: contain; /* Maintain aspect ratio, no cropping */
+    background: #222;
+    box-shadow: 0 4px 16px #0003;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    display: block;
+    transform: scaleX(-1);
 }
 
 .chatRoom {
