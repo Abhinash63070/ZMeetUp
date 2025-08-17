@@ -549,48 +549,32 @@ useEffect(() => {
                     </div>
 
 
-                    {video === true ? (
-  <video
-    className={styles.meetUserVideo}
-    ref={localVideoref}
-    autoPlay
-    muted
-  />
-) : (
-  <div
-    className={styles.meetUserVideo}
-    style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      background: "#222",
-      height: "20vh",
-      borderRadius: "20px"
-    }}
-  >
-    <VideocamOffIcon style={{ fontSize: "5rem", color: "#fff" }} />
-  </div>
-)}
+                    {/* Local video (always show only once) */}
+<video
+  className={styles.meetUserVideo}
+  ref={localVideoref}
+  autoPlay
+  muted
+/>
 
-                    <div className={styles.conferenceView}>
-                        {videos.map((video) => (
-                            <div key={video.socketId}>
-                                <video
-
-                                    data-socket={video.socketId}
-                                    ref={ref => {
-                                        if (ref && video.stream) {
-                                            ref.srcObject = video.stream;
-                                        }
-                                    }}
-                                    autoPlay
-                                >
-                                </video>
-                            </div>
-
-                        ))}
-
-                    </div>
+{/* Remote videos (do not show your own video) */}
+<div className={styles.conferenceView}>
+  {videos
+    .filter(video => video.socketId !== socketIdRef.current) // Only show remote users
+    .map(video => (
+      <div key={video.socketId}>
+        <video
+          data-socket={video.socketId}
+          ref={ref => {
+            if (ref && video.stream) {
+              ref.srcObject = video.stream;
+            }
+          }}
+          autoPlay
+        />
+      </div>
+    ))}
+</div>
 
                 </div>
 
