@@ -34,16 +34,11 @@
 }
 
 .conferenceView  video {
-    width: 30vw;
-    height: 30vh;
-    min-width: 200px;
-    min-height: 180px;
+    width: 40vw;
+    height: 20vh;
+    min-width: 30vw;
     border-radius: 10px;
-    object-fit: cover;
-    background: #222;
-    box-shadow: 0 4px 16px #0003;
-    margin: 1vw;
-    transform: scaleX(-1);
+     transform: scaleX(-1);
 }
 
 .chatRoom {
@@ -109,27 +104,5 @@
     left: 0 !important;
     bottom: 0 !important;
     border-radius: 0 !important;
-  }
-  .conferenceView {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 0;
-    width: 100vw !important;
-    min-height: 28vh;
-  }
-  .conferenceView video {
-    width: 44vw !important;
-    height: 24vh !important;
-    min-width: 120px;
-    min-height: 100px;
-    margin: 0 2vw 10px 2vw;
-    border-radius: 8px !important;
-    object-fit: cover;
-    box-shadow: 0 2px 8px #0002;
-    background: #222;
-    display: block;
   }
 }
