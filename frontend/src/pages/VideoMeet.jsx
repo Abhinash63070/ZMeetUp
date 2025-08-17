@@ -550,12 +550,28 @@ useEffect(() => {
 
 
                     {/* Local video (always show only once) */}
-<video
-  className={styles.meetUserVideo}
-  ref={localVideoref}
-  autoPlay
-  muted
-/>
+{video
+  ? (
+    <video
+      className={styles.meetUserVideo}
+      ref={localVideoref}
+      autoPlay
+      muted
+    />
+  )
+  : (
+    <div className={styles.meetUserVideo} style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "#222",
+      color: "#fff",
+      fontSize: "4rem"
+    }}>
+      <VideocamOffIcon fontSize="inherit" />
+    </div>
+  )
+}
 
 {/* Remote videos (do not show your own video) */}
 <div className={styles.conferenceView}>
